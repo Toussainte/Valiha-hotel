@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Valiha Hôtel</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>𝕍</span><i>hôtel</i>
+        </div>
+        <button class="menu-phone" aria-label="Menu">&#9776;</button>
+        <nav id="Menu-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="gelerie.html">Galerie</a></li>
+                <li><a class="active" href="reservation.html">Réservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="galerie-hero">
+        <div class="hero-tete">Valiha Hôtel</div>
+        <h1><em>Formulaire</em></h1>
+        <p>Veuillez remplir le formulaire ci-dessous</p>
+    </section>
+
+    <div class="bloc">
+        <form action="traitement.php" method="POST" class="form-card">
+            
+            <div class="form-section-titre">Votre séjour</div>
+            <div class="form-date">
+                <div class="form-group">
+                    <label for="arrivee">Date d'arrivée</label>
+                    <input type="date" id="arrivee" name="arrivee" required>
+                </div>
+                <div class="form-group">
+                    <label for="depart">Date de départ</label>
+                    <input type="date" id="depart" name="depart" required>
+                </div>
+            </div>
+
+            <div class="form-date">
+                <div class="form-group">
+                    <label for="chambre">Type de chambre</label>
+                    <select id="chambre" name="chambre" required>
+                        <option value="">-- Choisir --</option>
+                        <option value="standard">Chambre Standard — 80 000 Ar/nuit</option>
+                        <option value="deluxe">Chambre Deluxe — 120 000 Ar/nuit</option>
+                        <option value="suite">Suite Prestige — 200 000 Ar/nuit</option>
+                        <option value="bungalow">Bungalow Vue Mer — 250 000 Ar/nuit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="personnes">Nombre de personnes</label>
+                    <select id="personnes" name="personnes">
+                        <option value="1">1 personne</option>
+                        <option value="2" selected>2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="5">5 personnes</option>
+                        <option value="6">6 personnes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section-titre">Vos informations</div>
+            <div class="form-date">
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Rakoto" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Fitia" required>
+                </div>
+            </div>
+            
+            <div class="form-date">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="jean@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel" placeholder="+261 34 00 000 00" required>
+                </div>
+            </div>
+
+            <div class="home-btn">
+                <a href="confirmation.html" class="btn btn1">Réservez maintenant</a>
+                <a href="index.html" class="btn btn2">Annuler l'envoye</a>
+            </div> 
+        </form>
+    
+    </div>
+    <footer class="site-footer">
+        <p>© 2026 <strong>𝕍aliha Hôtel</strong> —  Madagascar |&nbsp;
+       <a href="contact.html">Nous contacter</a>
+    </p>
+    </footer>
+    <script>
+    const toggle = document.querySelector('.menu-phone');
+    const nav = document.getElementById('Menu-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+
+    const cards = document.querySelectorAll('.form-card'); // Ciblez votre formulaire
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(c => {
+    c.style.opacity = '0';
+    c.style.transition = 'opacity 0.8s ease';
+    observer.observe(c);
+});
+  </script>
+</body>
+</html>

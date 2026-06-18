@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation - Valiha Hôtel</title>
+    <link rel="stylesheet" href="reservation.css">
+    <style>
+        .confirmation-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .confirmation-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid var(--gold);
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(26, 37, 48, 0.15);
+            animation: fadeInUp 1s ease-out both;
+        }
+        .confirmation-card h2 { color: var(--navy); margin-bottom: 20px; }
+        .confirmation-card p { color: var(--gray); margin-bottom: 30px; }
+        .success-icon { font-size: 80px; color: var(--gold); margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><span>𝕍</span><i>hôtel</i></div>
+        <nav id="Menu-nav">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="reservation.html">Retour</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="confirmation-container">
+        <div class="confirmation-card">
+            <div class="success-icon">✓</div>
+            <h2>Réservation confirmée</h2>
+            <p>Merci de votre confiance. Votre demande de réservation a bien été reçue. Un membre de notre équipe vous contactera rapidement par email ou téléphone pour finaliser votre séjour au Valiha Hôtel.</p>
+            <a href="index.html" class="btn btn1">Retour à l'accueil</a>
+        </div>
+    </section>
+
+</body>
+</html>

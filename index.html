@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valiha hôtel officiel</title>
+    <link rel="stylesheet" href="accueil.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>𝕍</span><i>hôtel</i>
+        </div>
+        <button class="menu-phone" aria-label="Menu">&#9776;</button>
+        <nav id="Menu-nav">
+            <ul>
+                <li><a class="active" href="index.html">Accueil</a></li>
+                <li><a href="gelerie.html">Galerie</a></li>
+                <li><a href="reservation.html">Resérvation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="content-home">
+            <p class="home-tete">Bienvenue à </p>
+            <h1>
+                <span class="h1-valiha">𝕍aliha</span>
+                <br>Hôtel
+            </h1>
+            <div class="home-texte" aria-hidden="true"></div>
+            <h2>Loger avec confort <br>et sécurité</h2>
+            <p class="home-paragraphe">
+                Découvrez une expérience hôtelière d'exception.
+                Chambre raffinées, service attentionné, sejours inoubliable.
+            </p>
+            <div class="home-btn">
+                <a href="reservation.html" class="btn btn1">Réservez maintenant</a>
+                <a href="Chambre.html" class="btn btn2">Voir les chambres</a>
+            </div> 
+        </div>
+         <div class="home-img">
+                <div class="img-forme">
+                    <img src="valiha.png" alt="Vue de Valiha hôtel">
+                </div>
+         </div>
+    </section>
+    <footer class="site-footer">
+        <p>© 2026 <strong>𝕍aliha Hôtel</strong> —  Madagascar |&nbsp;
+       <a href="contact.html">Nous contacter</a>
+    </p>
+    </footer>
+
+<script>
+    const toggle = document.querySelector('.menu-phone');
+    const nav = document.getElementById('Menu-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+
+    const cards = document.querySelectorAll('.feature-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = (i * 0.12) + 's';
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(c => observer.observe(c));
+  </script>
+
+   
+</body>
+</html>
